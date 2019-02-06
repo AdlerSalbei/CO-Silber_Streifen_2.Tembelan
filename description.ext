@@ -64,6 +64,7 @@ class CfgFunctions
 	#include "functions\waverespawn\cfgFunctions.hpp"
 
     #include "node_modules\grad-loadout\cfgFunctions.hpp"
+	#include "grad-introCam\cfgFunctions.hpp"
 
 	#include "USER\userFunctions.hpp"
 };
