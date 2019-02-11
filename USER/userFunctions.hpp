@@ -5,6 +5,6 @@
 class GRAD_SS {
     class common {
         file = "USER\functions";
-        class addToWave {};
+        class explosionSplash {};
     };
 };
