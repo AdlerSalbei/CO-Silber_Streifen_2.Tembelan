@@ -1,4 +1,4 @@
-params ["_cam", "_target", "_startingAngle", "_endAngle", "_duration", "_radius" ["_clockwise", true], ["_rise", 0]];
+params ["_cam", "_target", "_startingAngle", "_endAngle", "_duration", "_radius", ["_clockwise", true], ["_rise", 0]];
 
 private _angleDistance = (_endAngle - _startingAngle) mod 360;
 private _steps = if (_clockwise) then {
@@ -18,7 +18,7 @@ private _riseSteps = switch (true) do {
 };
 GRAD_introCam_camAngle = _startingAngle;
 private _pos = getPos _cam;
-private _camAttachObj = "" createVehicleLocal _pos;
+private _camAttachObj = "Land_InvisibleBarrier_F" createVehicleLocal _pos;
 _camAttachObj setPos _pos;
 _cam attachedTo [_camAttachObj, [0, 0, 0]];
 
