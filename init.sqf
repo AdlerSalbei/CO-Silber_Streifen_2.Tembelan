@@ -8,3 +8,5 @@ enableSaving [false, false];
 
 // SCRIPTS =====================================================================
 [] execVM "USER\userInit.sqf";
+
+GRAD_SS_aktivateHeli = false;
