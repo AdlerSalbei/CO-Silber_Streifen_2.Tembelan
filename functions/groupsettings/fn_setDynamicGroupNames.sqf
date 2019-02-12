@@ -6,7 +6,7 @@ params ["_allgroups"];
 {
     {
         private _callsign = [_x] call grad_groupsettings_fnc_getCallsign;
-        ["RegisterGroup", [_x, leader _x, [nil, _callsign, false]] call BIS_fnc_dynamicGroups;
+        ["RegisterGroup", [_x, leader _x, [nil, _callsign, false]]] call BIS_fnc_dynamicGroups;
 
         false
     } count _x;
