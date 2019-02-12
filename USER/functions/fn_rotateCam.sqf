@@ -37,7 +37,7 @@ diag_log format ["ANGDist: %1, Steps: %2, RiseSteps: %3", _angleDistance, _steps
             [{GRAD_introCam_camRotateFinisch = nil;},[],1] call CBA_fnc_waitAndExecute;
         };
 
-        GRAD_introCam_camAngle = GRAD_introCam_camAngle + _steps
+        GRAD_introCam_camAngle = GRAD_introCam_camAngle + _steps;
 
         private _newPos = _target getPos [_radius, GRAD_introCam_camAngle];
         if (_rise != 0) then {
