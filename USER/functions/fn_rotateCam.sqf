@@ -20,7 +20,7 @@ GRAD_introCam_camAngle = _startingAngle;
 private _pos = getPos _cam;
 private _camAttachObj = "Land_InvisibleBarrier_F" createVehicleLocal _pos;
 _camAttachObj setPos _pos;
-_cam attachedTo [_camAttachObj, [0, 0, 0]];
+_cam attachTo [_camAttachObj, [0, 0, 0]];
 
 diag_log format ["Cam: %1, Target: %2, StartAng: %3, EndAng: %4, Duration: %5, Clockwise: %6, Rise: %7, Radius: %8", _cam, _target, _startingAngle, _endAngle, _duration, _clockwise, _rise, _radius];
 diag_log format ["ANGDist: %1, Steps: %2, RiseSteps: %3", _angleDistance, _steps, _riseSteps];
