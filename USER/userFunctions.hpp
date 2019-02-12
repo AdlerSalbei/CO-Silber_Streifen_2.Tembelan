@@ -6,6 +6,7 @@ class GRAD_SS {
     class common {
         file = "USER\functions";
         class blitzEffect {};
+        class intro {};
         class rotateCam {};
     };
 };
