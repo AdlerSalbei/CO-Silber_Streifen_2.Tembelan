@@ -33,10 +33,6 @@ enableDebugConsole[] = {
 class missionSettings {
 	#include "USER\missionSettings.hpp"
 
-	class restrictedArsenal {
-		#include "USER\restrictedArsenal.hpp"
-	};
-
 	class groupsettings {
 		#include "USER\groupsettings.hpp"
 	};
