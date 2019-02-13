@@ -1,5 +1,5 @@
 private _camera = "camera" camCreate (getPos camPos_5);
-_camera camSetPos (getPos camPos_0);
+_camera camSetPos (getPos camPos_5);
 _camera camCommand "inertia on";
 _camera camSetTarget camTarget_0;
 _camera cameraEffect ["internal","back"];
@@ -10,7 +10,7 @@ private _dir = getDir _camera;
 private _distance = _camera distance2D camTarget_0;
 private _duration = 5;
 private _clockwise = true;
-private _rise = 0;
+private _rise = -1;
 
 diag_log format ["Camera: %1, Target: %2, Dir: %3, EndDir: %4, Duration: %5, Distance: %6, Clockwise: %7, Rise: %8", _camera, camTarget_0, _dir, (_dir + 180), _duration, _distance, _clockwise, _rise];
 
