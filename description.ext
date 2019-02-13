@@ -44,10 +44,6 @@ class missionSettings {
 	class radiosettings {
 		#include "USER\radiosettings.hpp"
 	};
-
-	class respawnSettings {
-		#include "USER\respawnSettings.hpp"
-	};
 };
 
 
@@ -61,7 +57,6 @@ class CfgFunctions
     #include "functions\groupsettings\cfgFunctions.hpp"
 	#include "functions\missionSetup\cfgFunctions.hpp"
     #include "functions\radiosettings\cfgFunctions.hpp"
-	#include "functions\waverespawn\cfgFunctions.hpp"
 
     #include "node_modules\grad-loadout\cfgFunctions.hpp"
 
