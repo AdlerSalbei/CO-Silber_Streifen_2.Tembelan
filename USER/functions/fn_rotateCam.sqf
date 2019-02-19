@@ -1,16 +1,19 @@
 params ["_cam", "_target", "_startingAngle", "_endAngle", "_duration", "_radius", ["_clockwise", true], ["_rise", 0]];
 
-GRAD_introCam_camRotateFinisch = false;
+GRAD_introCam_camRotateFinish = false;
+
 private _angleDistance = _endAngle - _startingAngle;
-if (_clockwise == 1) then {
-	if (_endAngle < _startingAngle) then {
-		_angleDistance = 360 - _startingAngle + _endAngle;
-	};
+if (_clockwise) then {
+    if (_endAngle < _startingAngle) then {
+        _angleDistance = 360 - _startingAngle + _endAngle;
+    };
 }else{
-	if (_endAngle > _startingAngle) then {
-	   _angleDistance = (360 - _endAngle) + _startingAngle;
+    if (_endAngle > _startingAngle) then {
+       _angleDistance = (360 - _endAngle) + _startingAngle;
    };
 };
+
+_angleDistance = _angleDistance mod 360;
 
 private _steps = (_angleDistance / _duration) * 0.01;
 
@@ -20,25 +23,29 @@ private _riseSteps = if (_rise != 0) then {
     0
 };
 
+diag_log format ["ROTATE: Dura: %1, Start: %2, End: %3, Distanze: %4, Steps: %5", _duration, _startingAngle, _endAngle, _angleDistance, _steps];
+
 _duration = _duration* 0.01;
 
 GRAD_introCam_camAngle = _startingAngle;
-private _pos = getPos _cam;
-private _camAttachObj = "Land_InvisibleBarrier_F" createVehicleLocal _pos;
-_camAttachObj setPos _pos;
+private _pos = getPosASL _cam;
+private _camAttachObj = "HeliHEmpty" createVehicleLocal _pos;
+_camAttachObj setPosASL _pos;
 _cam attachTo [_camAttachObj, [0, 0, 0]];
 
 [
     {
         params ["_args", "_handle"];
-        _args params ["_camAttachObj", "_cam", "_target", "_steps", "_endAngle", "_duration", "_riseSteps", "_radius"];
-        if (GRAD_introCam_camAngle == _endAngle || {time > _duration}) exitWith {
+        _args params ["_camAttachObj", "_cam", "_target", "_steps", "_endAngle", "_endTime", "_riseSteps", "_radius"];
+        if (GRAD_introCam_camAngle == _endAngle || {time > _endTime}) exitWith {
             [_handle] call CBA_fnc_removePerFrameHandler;
+			_cam camSetPos (getPos _camAttachObj);
+            _cam camCommit 0;
             detach _cam;
             deleteVehicle _camAttachObj;
-            GRAD_introCam_camRotateFinisch = true;
+            GRAD_introCam_camRotateFinish = true;
             GRAD_introCam_camAngle = nil;
-            [{GRAD_introCam_camRotateFinisch = nil;},[],1] call CBA_fnc_waitAndExecute;
+            [{GRAD_introCam_camRotateFinish = nil;},[],1] call CBA_fnc_waitAndExecute;
         };
 
         GRAD_introCam_camAngle = GRAD_introCam_camAngle + _steps;
@@ -46,13 +53,12 @@ _cam attachTo [_camAttachObj, [0, 0, 0]];
         private _newPos = _target getPos [_radius, GRAD_introCam_camAngle];
         private _height = (getPosASL _camAttachObj) select 2;
         if (_riseSteps != 0) then {
-            _newPos set [2, (_height + (_riseSteps))];
-        }else{
-            _newPos set [2, _height];
+            _height = _height + (_riseSteps);
         };
 
+        _newPos set [2, _height];
         _camAttachObj setPosASL _newPos;
-
+diag_log format ["pos: %1, height, %2, dir: %3, step: %4", _newpos, _height, GRAD_introCam_camAngle, _steps];
     },
     0.01,
     [_camAttachObj, _cam, _target, _steps, _endAngle, (time + (_duration * 100) + 0.1), _riseSteps, _radius]
