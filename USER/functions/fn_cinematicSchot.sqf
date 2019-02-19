@@ -99,9 +99,38 @@ _camera camSetTarget rebelLeader01;
 _camera camCommit 0;
 sleep 5;
 
-Sniper01 doFire rebelGuard_1;
+Sniper01 forceWeaponFire ["rhs_weap_M107_w", "Single"];
 sleep 0.2;
 
 _camera camSetPos getPos snipercam_6;
 _camera camCommit 1.8;
 sleep 2;
+
+rebelGuard_1 setDamage 1;
+sleep 2;
+
+_camera camSetPos getPos snipercam_2;
+_camera camSetTarget rebelLeader01;
+_camera camCommit 2;
+sleep 2;
+
+
+private _pos = getPos ace_player;
+_pos set [2,1.7];
+_camera camSetTarget _pos;
+_camera camCommit 1;
+sleep 1;
+
+_camera camSetPos _pos;
+_camera camCommit 2.5;
+sleep 2.5;
+
+cutText ["", "BLACK OUT", 1];
+
+
+_filmgrain ppEffectEnable false;
+ppEffectDestroy _filmgrain;
+_camera cameraEffect ["terminate","back"];
+camDestroy _camera;
+
+cutText ["", "BLACK IN", 1];
