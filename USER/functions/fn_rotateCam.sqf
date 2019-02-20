@@ -1,6 +1,8 @@
 params ["_cam", "_target", "_startingAngle", "_endAngle", "_duration", "_radius", ["_clockwise", true], ["_rise", 0]];
 
 GRAD_introCam_camRotateFinish = false;
+_startingAngle = _startingAngle mod 360;
+_endAngle = _endAngle mod 360;
 
 private _angleDistance = _endAngle - _startingAngle;
 if (_clockwise) then {
@@ -12,8 +14,6 @@ if (_clockwise) then {
        _angleDistance = (360 - _endAngle) + _startingAngle;
    };
 };
-
-_angleDistance = _angleDistance mod 360;
 
 private _steps = (_angleDistance / _duration) * 0.01;
 

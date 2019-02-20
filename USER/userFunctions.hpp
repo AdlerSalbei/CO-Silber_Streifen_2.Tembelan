@@ -5,6 +5,7 @@
 class GRAD_SS {
     class common {
         file = "USER\functions";
+        class cinematicShot {};
         class intro {};
         class rotateCam {};
     };

@@ -4,7 +4,7 @@
 if (!hasInterface) exitWith {};
 [
     {
-        !isNull player && missionNamespace getVariable ["GRAD_loadoutFactionSet", false]
+        (!isNull ace_player && {missionNamespace getVariable ["GRAD_loadoutFactionSet", false]})
     },
     GRAD_radiosettings_fnc_setDefaultRadios,
     []
