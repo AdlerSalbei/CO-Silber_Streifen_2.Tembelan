@@ -1,7 +1,7 @@
 //if !(isNull (getAssignedCuratorLogic ace_player) || isServer) exitWith {};
 STHud_UIMode = 0;
 cutText ["", "BLACK", 4];
-rebelLeader01 playMove "Acts_CivilTalking_1";
+//rebelLeader01 playMoveNow "Acts_CivilTalking_1";
 [{
     cutText ["", "BLACK IN", 8];
     private _filmgrain = ppEffectCreate ["FilmGrain",2000];
@@ -64,7 +64,7 @@ rebelLeader01 playMove "Acts_CivilTalking_1";
                                     _camera camSetTarget rebelLeader01;
                                     _camera camSetFov 0.2;
                                     _camera camCommit 3;
-                                    rebelLeader01 playMove "Acts_CivilTalking_1";
+                                    //rebelLeader01 playMoveNow "Acts_CivilTalking_1";
                                     [{
                                         params ["_camera", "_filmgrain"];
 
@@ -118,7 +118,7 @@ rebelLeader01 playMove "Acts_CivilTalking_1";
                                                                         [{
                                                                             {if (alive rebelGuard_1) then {rebelGuard_1 setDamage 1;};} remoteExec ["bis_fnc_call", 2, false];
                                                                             [{
-                                                                                rebelLeader01 playMove "";
+                                                                                //rebelLeader01 playMoveNow "";
                                                                                 params ["_camera"];
 
                                                                                 _camera camSetPos getPos snipercam_2;
