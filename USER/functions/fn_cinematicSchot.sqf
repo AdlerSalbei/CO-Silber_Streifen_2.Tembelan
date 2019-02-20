@@ -20,7 +20,6 @@ cutText ["", "BLACK", 4];
     _camera camSetFov 1;
     _camera camCommit 0;
 
-
     _camera camSetPos getPos snipercam_2;
     _camera camSetTarget rebelLeader01;
     _camera camCommit 5;
