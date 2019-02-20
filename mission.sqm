@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5269.2939,209.86935,7835.6377};
-		dir[]={-0.0091746571,-0.31414494,-0.9494248};
-		up[]={-0.0030351696,0.94928741,-0.31436691};
-		aside[]={-1.0000407,1.1856389e-006,0.00966358};
+		pos[]={5866.0796,30.917328,6886.7163};
+		dir[]={-0.66061205,-0.73008686,0.17495283};
+		up[]={-0.70583326,0.68326747,0.1869294};
+		aside[]={0.25601414,4.2491592e-007,0.96669602};
 	};
 };
 binarizationWanted=0;
@@ -8679,7 +8679,7 @@ class Mission
 			};
 			id=1619;
 			type="ModulePersistentSmokePillar_F";
-			atlOffset=0.0080347061;
+			atlOffset=0.25142384;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -9205,7 +9205,7 @@ class Mission
 						angles[]={0,1.6944529,0};
 					};
 					side="Independent";
-					flags=7;
+					flags=3;
 					class Attributes
 					{
 						init="call{this setdammage 1;}";
@@ -9213,7 +9213,7 @@ class Mission
 					};
 					id=1626;
 					type="I_soldier_F";
-					atlOffset=0.00016117096;
+					atlOffset=3.5620003;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -9281,7 +9281,7 @@ class Mission
 			{
 			};
 			id=1625;
-			atlOffset=0.00016117096;
+			atlOffset=3.5620003;
 		};
 		class Item80
 		{
@@ -15174,8 +15174,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5272.6948,201.62601,7821.3809};
-				angles[]={0.00034906584,0,0.019181168};
+				position[]={5272.6948,201.62604,7821.3813};
+				angles[]={0.00034526698,0,0.019180488};
 			};
 			side="Empty";
 			flags=4;
@@ -15184,7 +15184,7 @@ class Mission
 			};
 			id=1836;
 			type="BloodSplatter_01_Large_Old_F";
-			atlOffset=3.0517578e-005;
+			atlOffset=6.1035156e-005;
 		};
 		class Item188
 		{
@@ -16831,6 +16831,7 @@ class Mission
 			};
 			id=1913;
 			type="C_SUV_01_F";
+			atlOffset=-0.004989624;
 		};
 		class Item241
 		{
@@ -16848,6 +16849,7 @@ class Mission
 			};
 			id=1914;
 			type="C_SUV_01_F";
+			atlOffset=-0.0010986328;
 		};
 		class Item242
 		{

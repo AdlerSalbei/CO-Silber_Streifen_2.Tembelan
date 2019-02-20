@@ -6,7 +6,8 @@ if !(isClass (configFile >> "CfgPatches" >> "tfar_core")) exitWith {
 
 private _loadoutWaitCondition = if (isClass (missionConfigFile >> "CfgFunctions" >> "GRAD_loadout")) then {{ace_player getVariable ["GRAD_loadout_applicationCount", 0] > 0}} else {true};
 [_loadoutWaitCondition, {
-    if (((getUnitLoadout ace_player) select 7) select 3 == "") exitWith {systemChat "radiosettings: No radio in loadout."};
+
+    if (isText (configFile >> "CfgWeapons" >> (((getUnitLoadout ace_player) select 9) select 2) >> "tf_parent")) exitWith {systemChat "radiosettings: No radio in loadout."};
 
     [] call grad_missionSetup_fnc_waitForRadioInit;
     [{ace_player getVariable ["grad_radiosReceived",false]}, {
