@@ -1,4 +1,4 @@
-params ["_cam", "_target", "_startingAngle", "_endAngle", "_duration", "_radius", ["_clockwise", true], ["_rise", 0]];
+params ["_cam", "_target", "_startingAngle", "_endAngle", "_duration", ["_radius", 30], ["_clockwise", true], ["_rise", 0]];
 
 GRAD_introCam_camRotateFinish = false;
 _startingAngle = _startingAngle mod 360;
@@ -42,7 +42,7 @@ _steps = _steps *3;
             detach _cam;
             deleteVehicle _camAttachObj;
             GRAD_introCam_camRotateFinish = true;
-            GRAD_introCam_camAngle = nil;
+            GRAD_introCam_camAngle = 0;
             [{GRAD_introCam_camRotateFinish = nil;},[],1] call CBA_fnc_waitAndExecute;
         };
 
