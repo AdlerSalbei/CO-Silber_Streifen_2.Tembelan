@@ -1,7 +1,7 @@
 //if !(isNull (getAssignedCuratorLogic ace_player) || isServer) exitWith {};
 STHud_UIMode = 0;
 cutText ["", "BLACK", 4];
-
+rebelLeader01 playMove "Acts_CivilTalking_1";
 [{
     cutText ["", "BLACK IN", 8];
     private _filmgrain = ppEffectCreate ["FilmGrain",2000];
@@ -26,9 +26,10 @@ cutText ["", "BLACK", 4];
     [{
         params ["_camera"];
 
-        [_camera, rebelLeader01, (rebelLeader01 getDir _camera), (rebelLeader01 getDir _camera)+180, 3, (rebelLeader01 distance2D _camera)] call grad_ss_fnc_rotateCam;
+        [_camera, rebelLeader01, (rebelLeader01 getDir _camera), (rebelLeader01 getDir _camera)+180, 10, (rebelLeader01 distance2D _camera)] call grad_ss_fnc_rotateCam;
         [{(!(isNil "GRAD_introCam_camRotateFinish") && {GRAD_introCam_camRotateFinish})},{
 
+            params ["_camera"];
             _camera camSetTarget snipercam_target_1;
             _camera camCommit 0.5;
             [{
@@ -36,16 +37,14 @@ cutText ["", "BLACK", 4];
 
                 _camera camSetPos getPos snipercam_3;
                 _camera camSetTarget snipercam_target_1;
-                _camera camCommit 8;
+                _camera camCommit 15;
                 [{
                     params ["_camera"];
 
-                    [_camera, snipercam_target_1, (snipercam_target_1 getDir _camera), (snipercam_target_1 getDir _camera)+180, 3, (snipercam_target_1 distance2D _camera)] call grad_ss_fnc_rotateCam;
-                    [{(!(isNil "GRAD_introCam_camRotateFinish") && {GRAD_introCam_camRotateFinish})},{
 
                         _camera camSetPos getPos snipercam_4;
                         _camera camSetTarget Sniper01;
-                        _camera camCommit 4;
+                        _camera camCommit 8;
                         [{
                             params ["_camera"];
 
@@ -65,6 +64,7 @@ cutText ["", "BLACK", 4];
                                     _camera camSetTarget rebelLeader01;
                                     _camera camSetFov 0.2;
                                     _camera camCommit 3;
+                                    rebelLeader01 playMove "Acts_CivilTalking_1";
                                     [{
                                         params ["_camera", "_filmgrain"];
 
@@ -108,7 +108,8 @@ cutText ["", "BLACK", 4];
                                                                 _camera camSetTarget rebelLeader01;
                                                                 _camera camCommit 0;
                                                                 [{
-                                                                    {if !(isNil "GRAD_SS_sniperShot") then {GRAD_SS_sniperShot = true; Sniper01 forceWeaponFire ["rhs_weap_M107_w", "Single"];};} remoteExec ["bis_fnc_call", 2, false];
+                                                                    {if (isNil "GRAD_SS_sniperShot") then {GRAD_SS_sniperShot = true; Sniper01 forceWeaponFire ["rhs_weap_M107_w", "Single"];};} remoteExec ["bis_fnc_call", 2, false];
+                                                                    [{!isNil "GRAD_SS_sniperShot"}, {
                                                                     [{
                                                                         params ["_camera"];
 
@@ -117,6 +118,7 @@ cutText ["", "BLACK", 4];
                                                                         [{
                                                                             {if (alive rebelGuard_1) then {rebelGuard_1 setDamage 1;};} remoteExec ["bis_fnc_call", 2, false];
                                                                             [{
+                                                                                rebelLeader01 playMove "";
                                                                                 params ["_camera"];
 
                                                                                 _camera camSetPos getPos snipercam_2;
@@ -130,7 +132,7 @@ cutText ["", "BLACK", 4];
                                                                                     _camera camSetTarget _pos;
                                                                                     _camera camCommit 1;
                                                                                     [{
-                                                                                        params ["_camera"];
+                                                                                        params ["_camera", "", "_pos"];
 
                                                                                         _camera camSetPos _pos;
                                                                                         _camera camCommit 2.5;
@@ -147,11 +149,12 @@ cutText ["", "BLACK", 4];
 
                                                                                             cutText ["", "BLACK IN", 1];
                                                                                         }, _this, 2.5] call CBA_fnc_waitAndExecute;
-                                                                                    }, _this, 1] call CBA_fnc_waitAndExecute;
+                                                                                    }, [_camera, _filmgrain, _pos], 1] call CBA_fnc_waitAndExecute;
                                                                                 }, _this, 2] call CBA_fnc_waitAndExecute;
                                                                             }, _this, 2] call CBA_fnc_waitAndExecute;
                                                                         }, _this, 2] call CBA_fnc_waitAndExecute;
                                                                     }, _this, 0.2] call CBA_fnc_waitAndExecute;
+                                                                    }, _this, 60] call CBA_fnc_waitUntilAndExecute;
                                                                 }, [_camera, _filmgrain], 5] call CBA_fnc_waitAndExecute;
                                                             }, _this, 4] call CBA_fnc_waitAndExecute;
                                                         }, _this, 3] call CBA_fnc_waitAndExecute;
@@ -162,10 +165,9 @@ cutText ["", "BLACK", 4];
                                     }, _this, 5] call CBA_fnc_waitAndExecute;
                                 }, _this, 5] call CBA_fnc_waitAndExecute;
                             }, _this, 3] call CBA_fnc_waitAndExecute;
-                        }, _this, 4] call CBA_fnc_waitAndExecute;
-                    }, _this, 60] call CBA_fnc_waitUntilAndExecute;
-                }, _this, 8] call CBA_fnc_waitAndExecute;
-            }, _this, 0.5] call CBA_fnc_waitAndExecute;
+                        }, _this, 8] call CBA_fnc_waitAndExecute;
+                }, _this, 20] call CBA_fnc_waitAndExecute;
+            }, _this, 1] call CBA_fnc_waitAndExecute;
         }, _this, 60] call CBA_fnc_waitUntilAndExecute;
     }, [_camera, _filmgrain], 5] call CBA_fnc_waitAndExecute;
 }, _this, 4] call CBA_fnc_waitAndExecute;

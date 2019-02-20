@@ -23,8 +23,6 @@ private _riseSteps = if (_rise != 0) then {
     0
 };
 
-diag_log format ["ROTATE: Dura: %1, Start: %2, End: %3, Distanze: %4, Steps: %5", _duration, _startingAngle, _endAngle, _angleDistance, _steps];
-
 _duration = _duration* 0.01;
 
 GRAD_introCam_camAngle = _startingAngle;
@@ -32,7 +30,7 @@ private _pos = getPosASL _cam;
 private _camAttachObj = "HeliHEmpty" createVehicleLocal _pos;
 _camAttachObj setPosASL _pos;
 _cam attachTo [_camAttachObj, [0, 0, 0]];
-
+_steps = _steps *3;
 [
     {
         params ["_args", "_handle"];
@@ -58,7 +56,6 @@ _cam attachTo [_camAttachObj, [0, 0, 0]];
 
         _newPos set [2, _height];
         _camAttachObj setPosASL _newPos;
-diag_log format ["pos: %1, height, %2, dir: %3, step: %4", _newpos, _height, GRAD_introCam_camAngle, _steps];
     },
     0.01,
     [_camAttachObj, _cam, _target, _steps, _endAngle, (time + (_duration * 100) + 0.1), _riseSteps, _radius]
