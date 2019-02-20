@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1907;
+		nextID=1917;
 	};
 	class MarkerIDProvider
 	{
@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=458;
+		nextID=474;
 	};
 	class Camera
 	{
@@ -90,13 +90,14 @@ addons[]=
 	"A3_Props_F_Orange_Humanitarian_Garbage",
 	"A3_Structures_F_Mil_Helipads",
 	"CUP_Misc_e_Config",
-	"A3_nature_sm"
+	"A3_nature_sm",
+	"A3_Soft_F_Gamma_SUV_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=53;
+		items=54;
 		class Item0
 		{
 			className="A3_Modules_F_Heli";
@@ -448,6 +449,13 @@ class AddonsMetaData
 			className="A3_nature_sm";
 			name="Arma_Natures";
 			author="Arma_Natures";
+		};
+		class Item53
+		{
+			className="A3_Soft_F_Gamma";
+			name="Arma 3 - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -3604,7 +3612,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=240;
+		items=244;
 		class Item0
 		{
 			dataType="Layer";
@@ -7973,7 +7981,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="call{this disableAI ""MOVE"";" \n "[{_this setDammage 1;},this,10] call CBA_fncwaitAndExecute;}";
+						init="call{this disableAI ""MOVE"";" \n "[{_this setDammage 1;},this,10] call CBA_fnc_waitAndExecute;}";
 						name="rebelcorpse01";
 					};
 					id=1598;
@@ -8048,7 +8056,7 @@ class Mission
 					flags=3;
 					class Attributes
 					{
-						init="call{this disableAI ""MOVE"";" \n "[{_this setDammage 1;},this,10] call CBA_fncwaitAndExecute;}";
+						init="call{this disableAI ""MOVE"";" \n "[{_this setDammage 1;},this,10] call CBA_fnc_waitAndExecute;}";
 						name="rebelcorpse03";
 					};
 					id=1600;
@@ -8123,7 +8131,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="call{this disableAI ""MOVE"";" \n "[{_this setDammage 1;},this,10] call CBA_fncwaitAndExecute;}";
+						init="call{this disableAI ""MOVE"";" \n "[{_this setDammage 1;},this,10] call CBA_fnc_waitAndExecute;}";
 						name="rebelcorpse02";
 					};
 					id=1602;
@@ -8198,7 +8206,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="call{this disableAI ""MOVE"";" \n "" \n "[{_this setDammage 1;},this,10] call CBA_fncwaitAndExecute;}";
+						init="call{this disableAI ""MOVE"";" \n "" \n "[{_this setDammage 1;},this,10] call CBA_fnc_waitAndExecute;}";
 						name="rebelcorpse04";
 					};
 					id=1604;
@@ -8671,7 +8679,7 @@ class Mission
 			};
 			id=1619;
 			type="ModulePersistentSmokePillar_F";
-			atlOffset=0.0079813004;
+			atlOffset=0.0080347061;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -9205,7 +9213,7 @@ class Mission
 					};
 					id=1626;
 					type="I_soldier_F";
-					atlOffset=0.00010681152;
+					atlOffset=0.00016117096;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -9273,7 +9281,7 @@ class Mission
 			{
 			};
 			id=1625;
-			atlOffset=0.00010681152;
+			atlOffset=0.00016117096;
 		};
 		class Item80
 		{
@@ -14893,7 +14901,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="call{this disableAI ""MOVE"";" \n "[{_this setDammage 1;},this,10] call CBA_fncwaitAndExecute;}";
+						init="call{this disableAI ""MOVE"";" \n "[{_this setDammage 1;},this,10] call CBA_fnc_waitAndExecute;}";
 					};
 					id=1828;
 					type="LOP_CHR_Civ_Functionary_01";
@@ -14964,7 +14972,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="call{[{_this setDammage 1;},this,10] call CBA_fncwaitAndExecute;}";
+						init="call{[{_this setDammage 1;},this,10] call CBA_fnc_waitAndExecute;}";
 					};
 					id=1830;
 					type="LOP_CHR_Civ_Functionary_02";
@@ -15035,7 +15043,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="call{this disableAI ""MOVE"";" \n "[{_this setDammage 1;},this,10] call CBA_fncwaitAndExecute;}";
+						init="call{this disableAI ""MOVE"";" \n "[{_this setDammage 1;},this,10] call CBA_fnc_waitAndExecute;}";
 					};
 					id=1832;
 					type="LOP_CHR_Civ_Functionary_02";
@@ -15106,7 +15114,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="call{this disableAI ""MOVE"";" \n "[{_this setDammage 1;},this,10] call CBA_fncwaitAndExecute;}";
+						init="call{this disableAI ""MOVE"";" \n "[{_this setDammage 1;},this,10] call CBA_fnc_waitAndExecute;}";
 					};
 					id=1834;
 					type="LOP_CHR_Civ_Functionary_01";
@@ -15576,7 +15584,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="call{this disableAI ""MOVE"";" \n "[{_this setDammage 1;},this,10] call CBA_fncwaitAndExecute;}";
+						init="call{this disableAI ""MOVE"";" \n "[{_this setDammage 1;},this,10] call CBA_fnc_waitAndExecute;}";
 					};
 					id=1869;
 					type="I_soldier_F";
@@ -15648,7 +15656,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="call{this disableAI ""MOVE"";" \n "[{_this setDammage 1;},this,10] call CBA_fncwaitAndExecute;}";
+						init="call{this disableAI ""MOVE"";" \n "[{_this setDammage 1;},this,10] call CBA_fnc_waitAndExecute;}";
 					};
 					id=1871;
 					type="I_soldier_F";
@@ -15720,7 +15728,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="call{this disableAI ""MOVE"";" \n "[{_this setDammage 1;},this,10] call CBA_fncwaitAndExecute;}";
+						init="call{this disableAI ""MOVE"";" \n "[{_this setDammage 1;},this,10] call CBA_fnc_waitAndExecute;}";
 					};
 					id=1873;
 					type="I_Soldier_AR_F";
@@ -16806,6 +16814,74 @@ class Mission
 			id=1906;
 			type="Land_HelipadEmpty_F";
 			atlOffset=0.48266602;
+		};
+		class Item240
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5297.02,193.94154,7909.6377};
+				angles[]={0.059928458,2.8832498,6.2252488};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				textures="Black";
+			};
+			id=1913;
+			type="C_SUV_01_F";
+		};
+		class Item241
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5293.1782,194.11752,7909.0786};
+				angles[]={0.061919641,2.8832498,6.2711902};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				textures="Black";
+			};
+			id=1914;
+			type="C_SUV_01_F";
+		};
+		class Item242
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5289.5103,194.23737,7908.5254};
+				angles[]={0.087774232,2.8832498,6.2731848};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				textures="Black";
+			};
+			id=1915;
+			type="C_SUV_01_F";
+		};
+		class Item243
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5300.7163,193.66943,7910.4917};
+				angles[]={0.083802827,2.8832498,6.2212658};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				textures="Black";
+			};
+			id=1916;
+			type="C_SUV_01_F";
 		};
 	};
 	class Connections
