@@ -176,14 +176,15 @@ playMusic "LeadTrack03_F_Mark";
                                                                             [{
                                                                                 //if (isServer) then {rebelLeader01 playMoveNow "";};
                                                                                 params ["_camera"];
-                                                                                RebelHMG_1 doTarget Sniper01;
-                                                                                RebelHMG_2 doTarget Sniper01;
-                                                                                RebelHMG_1 doWatch Sniper01;
-                                                                                RebelHMG_2 doWatch Sniper01;
-                                                                                {
-                                                                                        ["ace_zeus_suppressiveFire", [_x, getPosASL Sniper01, ""], _x] call CBA_fnc_targetEvent;
-                                                                                        } forEach [RebelHMG_1,RebelHMG_2];
-
+                                                                                if (isServer) then {
+                                                                                    RebelHMG_1 doTarget Sniper01;
+                                                                                    RebelHMG_2 doTarget Sniper01;
+                                                                                    RebelHMG_1 doWatch Sniper01;
+                                                                                    RebelHMG_2 doWatch Sniper01;
+                                                                                    {
+                                                                                            ["ace_zeus_suppressiveFire", [_x, getPosASL Sniper01, ""], _x] call CBA_fnc_targetEvent;
+                                                                                    } forEach [RebelHMG_1,RebelHMG_2];
+                                                                                };
                                                                                 _camera camSetPos getPos snipercam_2;
                                                                                 _camera camSetTarget rebelLeader01;
                                                                                 _camera camCommit 2;
