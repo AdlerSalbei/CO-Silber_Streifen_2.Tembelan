@@ -168,7 +168,10 @@ playMusic "LeadTrack03_F_Mark";
 
                                                                         [{
                                                                             playSound "bulletCrack";
-                                                                            if (isServer) then {rebelGuard_1 setDamage 1;};
+                                                                            [] call grad_ss_fnc_headshot;
+                                                                            if (isServer) then {
+                                                                                [{rebelGuard_1 setDamage 1}, []] call CBA_fnc_execNextFrame;
+                                                                            };
 
                                                                             [{
                                                                                 //if (isServer) then {rebelLeader01 playMoveNow "";};
