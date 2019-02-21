@@ -168,7 +168,7 @@ playMusic "LeadTrack03_F_Mark";
 
                                                                         [{
                                                                             playSound "bulletCrack";
-                                                                            [] call grad_ss_fnc_headshot;
+                                                                            [rebelGuard_1] remoteExecCall ["GRAD_SS_fnc_headshot"];
                                                                             if (isServer) then {
                                                                                 [{rebelGuard_1 setDamage 1}, []] call CBA_fnc_execNextFrame;
                                                                             };
