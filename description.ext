@@ -29,6 +29,7 @@ enableDebugConsole[] = {
 #include "USER\garbageCollector.hpp"
 #include "cfgEventHandlers.hpp"
 #include "cfgIslands.hpp"
+#include "CfgCloudlets.hpp"
 
 class missionSettings {
 	#include "USER\missionSettings.hpp"
