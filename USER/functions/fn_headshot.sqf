@@ -29,4 +29,3 @@ _breath attachTo [_object,[0,0,0.2], "head"];
 [{
     { deleteVehicle _x } forEach _this;
 },[_breath],0.2] call CBA_fnc_waitAndExecute;
-};

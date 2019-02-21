@@ -34,7 +34,7 @@ playMusic "LeadTrack03_F_Mark";
 
             params ["_camera"];
             _camera camSetTarget snipercam_target_1;
-            _camera camCommit 1.5;
+            _camera camCommit 3;
 
             [{
                 params ["_camera"];
@@ -118,25 +118,25 @@ playMusic "LeadTrack03_F_Mark";
                                         [{
                                             params ["_camera", "", "_pos"];
 
-                                            _camera camSetTarget (_pos vectorAdd [0.14,0.16,0.21]);
+                                            _camera camSetTarget (_pos vectorAdd [0.64,0.63,0.91]);
                                             _camera camCommit 2.5;
 
                                             [{
                                                 params ["_camera", "", "_pos"];
 
-                                                _camera camSetTarget (_pos vectorAdd [-0.04,0.19,-0.3]);
+                                                _camera camSetTarget (_pos vectorAdd [-0.04,0.29,-0.4]);
                                                 _camera camCommit 2.5;
 
                                                 [{
                                                     params ["_camera", "", "_pos"];
 
-                                                    _camera camSetTarget (_pos vectorAdd [0.17,0.09,0.07]);
+                                                    _camera camSetTarget (_pos vectorAdd [0.57,-0.9,0.7]);
                                                     _camera camCommit 2.5;
 
                                                     [{
                                                         params ["_camera", "", "_pos"];
 
-                                                        _camera camSetTarget (_pos vectorAdd [0.12,-0.13,-0.06]);
+                                                        _camera camSetTarget (_pos vectorAdd [0.32,-0.13,-0.66]);
                                                         _camera camCommit 2.5;
 
                                                         [{
@@ -157,7 +157,9 @@ playMusic "LeadTrack03_F_Mark";
                                                                     if (isServer) then {
                                                                         Sniper01 forceWeaponFire ["rhs_weap_M107_w", "Single"];
                                                                         GRAD_SS_sniperShot = true;
+                                                                        publicVariable "GRAD_SS_sniperShot";
                                                                     };
+
                                                                     [{!isNil "GRAD_SS_sniperShot"}, {
 
                                                                     [{
@@ -168,7 +170,7 @@ playMusic "LeadTrack03_F_Mark";
 
                                                                         [{
                                                                             playSound "bulletCrack";
-                                                                            [rebelGuard_1] remoteExecCall ["GRAD_SS_fnc_headshot"];
+                                                                            //[rebelGuard_1] remoteExecCall ["GRAD_SS_fnc_headshot"];
                                                                             if (isServer) then {
                                                                                 [{rebelGuard_1 setDamage 1}, []] call CBA_fnc_execNextFrame;
                                                                             };
@@ -228,7 +230,7 @@ playMusic "LeadTrack03_F_Mark";
                                                                     }, _this, 0.2] call CBA_fnc_waitAndExecute;
                                                                     }, _this, 60] call CBA_fnc_waitUntilAndExecute;
                                                                 }, [_camera, _filmgrain], 5] call CBA_fnc_waitAndExecute;
-                                                            }, _this, 4] call CBA_fnc_waitAndExecute;
+                                                            }, _this, 3] call CBA_fnc_waitAndExecute;
                                                         }, _this, 2.5] call CBA_fnc_waitAndExecute;
                                                     }, _this, 2.5] call CBA_fnc_waitAndExecute;
                                                 }, _this, 2.5] call CBA_fnc_waitAndExecute;
@@ -239,7 +241,7 @@ playMusic "LeadTrack03_F_Mark";
                             }, _this, 3] call CBA_fnc_waitAndExecute;
                         }, _this, 8] call CBA_fnc_waitAndExecute;
                 }, _this, 17] call CBA_fnc_waitAndExecute;
-            }, _this, 2] call CBA_fnc_waitAndExecute;
+            }, _this, 3.5] call CBA_fnc_waitAndExecute;
         }, _this, 60] call CBA_fnc_waitUntilAndExecute;
     }, [_camera, _filmgrain], 5] call CBA_fnc_waitAndExecute;
 }, _this, 4] call CBA_fnc_waitAndExecute;

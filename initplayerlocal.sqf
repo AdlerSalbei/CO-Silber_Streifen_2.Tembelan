@@ -11,7 +11,7 @@ grad_template_ratingEH = player addEventHandler ["HandleRating",{0}];
             STHud_UIMode = 0;
             [{time > (_this + 3)},{
                 STHud_UIMode = 0;
-                //["Mediterranean", "EventTrack01_F_Jets"] call GRAD_SS_fnc_intro;
+                ["Mediterranean", "EventTrack01_F_Jets"] call GRAD_SS_fnc_intro;
             },time] call CBA_fnc_waitUntilAndExecute;
         };
     };
