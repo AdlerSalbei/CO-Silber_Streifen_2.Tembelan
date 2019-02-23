@@ -8,7 +8,6 @@ grad_template_ratingEH = player addEventHandler ["HandleRating",{0}];
 ["CBA_loadingScreenDone", {
     if (isNull (getAssignedCuratorLogic ace_player)) then {
         if (!(didJIP) || {(didJIP && !(isNil "GRAD_SS_introOver"))}) then {
-            STHud_UIMode = 0;
             [{time > (_this + 3)},{
                 STHud_UIMode = 0;
                 ["Mediterranean", "EventTrack01_F_Jets"] call GRAD_SS_fnc_intro;
